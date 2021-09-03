@@ -1,20 +1,11 @@
 Account Username: Prakash
 Account Password: 1234
 Transactions History File: Transaction_History.txt
-Account Balance:  Rs.1000
+initial Account Balance:  Rs.1000
 
 
 
 ====================
-Thu Sep 02 15:19:25 2021
+Fri Sep 03 12:52:05 2021
 =================== 
-Updated Amount: Rs.1000 
-========================
-
-
-====================
-Thu Sep 02 15:20:43 2021
-=================== 
-Updated Amount: Rs.1000 
-========================
-
+Updated Account Balance: Rs.4700

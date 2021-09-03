@@ -1,26 +1,15 @@
 
-Thu Sep 02 15:13:52 2021
-: 
-Shown balance Amount: Rs.1000 
+ 
+Fri Sep 03 12:51:13 2021
+ 
+Shown balance Amount: Rs.8400 
 
-Amount Withdrawn: Rs.200 
-Your Current Balance is Rs.800 
+Amount Withdrawn: Rs.4000 
+Your Current Balance is Rs.4400 
 
-Amount Deposited: Rs.4000 
-Your Current Balance is Rs.4800 
+Amount Deposited: Rs.500 
+Your Current Balance is Rs.4900 
 
-Amount Rs.100 Exchanged in $1 
+Amount Rs.200 Exchanged in €2 
 Your Current Account Balance is Rs.4700 
-
-Amount Rs.100 Exchanged in €1 
-Your Current Account Balance is Rs.4600 
-
-Amount Rs.100 Exchanged in ¥148 
-Your Current Account Balance is Rs.4500 
 =====================Session End=======================
-Thu Sep 02 15:18:35 2021
-: =====================Session End=======================
-Thu Sep 02 15:19:41 2021
-: =====================Session End=======================
-Thu Sep 02 15:22:32 2021
-: 

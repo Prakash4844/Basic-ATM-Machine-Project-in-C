@@ -12,7 +12,7 @@ int transactionTime()
    
     time_t t;
     time(&t);
-    fprintf(fptr2,"\n%s: ",ctime(&t));
+    fprintf(fptr2,"\n%s ",ctime(&t));
     fclose(fptr2);
     return 0;
 }
@@ -21,6 +21,7 @@ int accountUpdate()
 {
   FILE *fptr1;
   fptr1 = fopen("D:/Users/Zaphkil!/Documents/GitHub/Basic-ATM-Machine-Project-in-C/User_Account_info/Account_Details.txt","a");
+  printf("\nSession time added to Account_Details.txt file.\n----------------------------------");
     printf("\nUpdated Account_Details.txt file.\n----------------------------------");
    
     time_t t;
@@ -30,12 +31,13 @@ int accountUpdate()
     return 0;
 }
 
-unsigned long amount = 1000, deposit, withdraw, exchange, exchangedAmount;
+unsigned long amount, deposit, withdraw, exchange, exchangedAmount;
 int choice, pin, k, currecyExchange;
 char transaction = 'y';
 char name[20];
 FILE *fptr1; 
 FILE *fptr2;
+FILE *fptr3;
 
 void main()
 {
@@ -60,24 +62,31 @@ void main()
       printf("invalid Username"); //Invalid username
       goto Name;//Jumps to the start of main Function
     }
-    fptr1 = fopen("D:/Users/Zaphkil!/Documents/GitHub/Basic-ATM-Machine-Project-in-C/User_Account_info/Account_Details.txt","a");
-    printf("-----------------------------\nOpened Account_Details.txt file.");
-    if(fptr1 == NULL)
+    fptr3 = fopen("D:/Users/Zaphkil!/Documents/GitHub/Basic-ATM-Machine-Project-in-C/User_Account_info/Account_Balance.txt","r");
+    printf("-----------------------------\nOpened Account_Balance.txt file.");
+    if(fptr3 == NULL)
    {
       printf("Error!");   
       exit(1);             
    }
 
     fptr2 = fopen("D:/Users/Zaphkil!/Documents/GitHub/Basic-ATM-Machine-Project-in-C/User_Account_info/Transaction_History.txt","a");
-    printf("\nOpened Transaction_History.txt file.\n----------------------------------");
+    printf("\nOpened Transaction_History.txt file.\n----------------------------------\n");
     transactionTime();
     if(fptr2 == NULL)
    {
       printf("Error!");   
       exit(1);             
    }
+  printf("\nFetching Account Balance!");
+  while (fscanf(fptr3, "%lu", &amount) == 1)
+  { 
+    printf("\nAccount Balance fetched Successfully!.\n");
+  }
+  printf("\nAccount Balance: %lu \n", amount);
 
-  
+  fclose(fptr3);
+
   do
   {
     printf("\n                Hello, %s", name);
@@ -139,7 +148,7 @@ void main()
 
     case 3:             //This case is used to Deposit the money in bank account
 
-      printf("\nEnter the Amount to Deposit: Rs.");
+      printf("\nEnter the Amount to Deposit: Rs.\n");
       scanf("%lu", &deposit);
 
       amount = amount + deposit;
@@ -228,7 +237,7 @@ void main()
     }
     
     // to Repeat the Last Transcation Press Y, Or choose a option from Menu Below
-    printf("\n\nDo U Wish to Repeat Last Operation/Transcation, then Press 'Y', Or Press manu no. 2 times to Choose Another option from Mainmenu: \nPress 'N' to Exit.\n");
+    printf("\n\nDo U Wish to Repeat Last Operation/Transcation, then Press 'Y', Or Press any key(Except Y/N) to return to Mainmenu: \nPress 'N' to Exit.\n");
     fflush(stdin);
 
     scanf("%c", & transaction);
@@ -239,12 +248,23 @@ void main()
   
     while (!k);
     jump:
-
+    fptr1 = fopen("D:/Users/Zaphkil!/Documents/GitHub/Basic-ATM-Machine-Project-in-C/User_Account_info/Account_Details.txt","a");
+    printf("-----------------------------\nOpened Account_Details.txt file.");
+    if(fptr1 == NULL)
+   {
+      printf("Error!");   
+      exit(1);             
+   }
+   fptr3 = fopen("D:/Users/Zaphkil!/Documents/GitHub/Basic-ATM-Machine-Project-in-C/User_Account_info/Account_Balance.txt","w");
+    printf("\nOpened Account_Balance.txt file.");
     accountUpdate();
-    fprintf(fptr1,"\nUpdated Amount: Rs.%lu \n========================\n\n",amount);
+    fprintf(fptr3,"%lu",amount);
+    printf("Overwritten Account_Balance.txt");
+    fprintf(fptr1,"\nUpdated Account Balance: Rs.%lu",amount);
 
     fprintf(fptr2,"=====================Session End=======================");
     fclose(fptr1);
     fclose(fptr2);
+    fclose(fptr3);
     printf("\n\nThank You for Using NSTTPKS Bank ATM.\n          Have a Nice Day.");   
 }
