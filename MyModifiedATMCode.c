@@ -17,6 +17,11 @@ int transactionTime()
   fptr2 = fopen("D:/Users/Zaphkil!/Documents/GitHub/Basic-ATM-Machine-Project-in-C/User_Account_info/Transaction_History.txt","a");
     printf("\nSession time added to Transaction_History.txt file.\n----------------------------------");
    
+  //header file time.h and in time.h, That have a defined a function that is ctime it will return current system date and Time
+  //here in time.h we have also defined a structure that is time_t. this define a structure name so we can make obj of this structure
+  //now we also have a function named time which will pass the reference to structure. by this we have taken time from system and
+  //in the end we use printf to print the time with additional formating and text and time using ctime with passing reference to 
+  //the time function 
     time_t t;
     time(&t);
     fprintf(fptr2,"\n%s ",ctime(&t));
@@ -31,6 +36,11 @@ int accountUpdate()
   printf("\nSession time added to Account_Details.txt file.\n----------------------------------");
     printf("\nUpdated Account_Details.txt file.\n----------------------------------");
    
+  //header file time.h and in time.h, That have a defined a function that is ctime it will return current system date and Time
+  //here in time.h we have also defined a structure that is time_t. this define a structure name so we can make obj of this structure
+  //now we also have a function named time which will pass the reference to structure. by this we have taken time from system and
+  //in the end we use printf to print the time with additional formating and text and time using ctime with passing reference to 
+  //the time function 
     time_t t;
     time(&t);
     fprintf(fptr1,"\n====================\n%s=================== ",ctime(&t));
