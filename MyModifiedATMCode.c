@@ -103,7 +103,7 @@ void main()
   printf("\nAccount Balance: %lu \n", amount);
 
   fclose(fptr3);
-  
+  invalid:
   do
   {
     printf("\n                Hello, %s", name);
@@ -235,15 +235,15 @@ void main()
     case 5: //About and Credit
                     printf("\n\n\n===========Welcome to NSTTPKS Bank ATM About section============\n\n\n");
                     printf("Our Name NSTTPKS is formed of Initials of each of our Project group member Name.\n");
-                    printf("That is:(in Alphabetically ascending order)\n");
+                    printf("That is:\n");
                     
                     printf("Neezam Ali\nSonali Rawat\nTeesha\nTanu\nPrakash\nKirty\nSagar Goswami\n");
                     
                     printf("\n\nThis project of ATM machine Code Contains the Following functionality:\n");
-                    printf("1. Check the balance\n2. Withdrawn cash\n3. Deposit Cash\n4. Currency Exchange to\n\t1. USD \n\t2. EUR \n\t3. JPY\n5. About NSTTPKS ATM\n\n\n\n");
-                    printf("Keeping a record of Transaction History\n");
-                    printf("\n\nThis Mini Project uses some of the very basic concepts from C language,");
-                    printf("\n NOTE:this Program Doesn't show even a fraction of what C Language can do.\n");
+                    printf("1. Check the balance\n2. Withdrawn cash\n3. Deposit Cash\n4. Currency Exchange to\n\t1. USD \n\t2. EUR \n\t3. JPY\n5. About NSTTPKS ATM");
+                    printf("\n6. Keeping a record of Transaction History with time in seperated sessions\n");
+                    printf("\n\nThis Mini Project uses some of the very basic concepts from C language");
+                    printf("\nNOTE:This Program Doesn't even show a fraction of what C Language can actually do.\n");
                     break;
 
     case 6:
@@ -252,6 +252,7 @@ void main()
 
     default:
         printf("\n Invalid Choice, Please enter a valid choice.");
+        goto invalid;
         
     }
     
