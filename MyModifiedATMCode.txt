@@ -1,3 +1,10 @@
+                                          /////////////////////////////////////////////////////////////////
+                                          // Mini Project of Bank ATM Services in C Prpgramming Language //                                                          
+                                          // Group members: Neezam Ali, Sonali Rawat, Teesha, Tanu,      //
+                                          //                Prakash, Kirty, Sagar Goswami                //                                          
+                                          //              Comments Added by: Prakash 205028              //                                          
+                                          ///////////////////////////////////////////////////////////////// 
+
 //For Info About Program check About Section from NSTTPKS Bank Service mainmenu.
 #include <stdio.h>
 #include <stdlib.h>             //used only for goto statement
@@ -10,6 +17,11 @@ int transactionTime()
   fptr2 = fopen("D:/Users/Zaphkil!/Documents/GitHub/Basic-ATM-Machine-Project-in-C/User_Account_info/Transaction_History.txt","a");
     printf("\nSession time added to Transaction_History.txt file.\n----------------------------------");
    
+  //header file time.h and in time.h, That have a defined a function that is ctime it will return current system date and Time
+  //here in time.h we have also defined a structure that is time_t. this define a structure name so we can make obj of this structure
+  //now we also have a function named time which will pass the reference to structure. by this we have taken time from system and
+  //in the end we use printf to print the time with additional formating and text and time using ctime with passing reference to 
+  //the time function 
     time_t t;
     time(&t);
     fprintf(fptr2,"\n%s ",ctime(&t));
@@ -24,6 +36,11 @@ int accountUpdate()
   printf("\nSession time added to Account_Details.txt file.\n----------------------------------");
     printf("\nUpdated Account_Details.txt file.\n----------------------------------");
    
+  //header file time.h and in time.h, That have a defined a function that is ctime it will return current system date and Time
+  //here in time.h we have also defined a structure that is time_t. this define a structure name so we can make obj of this structure
+  //now we also have a function named time which will pass the reference to structure. by this we have taken time from system and
+  //in the end we use printf to print the time with additional formating and text and time using ctime with passing reference to 
+  //the time function 
     time_t t;
     time(&t);
     fprintf(fptr1,"\n====================\n%s=================== ",ctime(&t));
@@ -51,9 +68,9 @@ void main()
         printf("Enter Your Secret Pin Number: ");
         scanf("%d", & pin);
         
-        if (pin != 1234)
+        if (pin != 1234)  // checking if the password is invalid
         {
-          printf("Please Enter Valid Password! \a\n");
+          printf("Please Enter Valid Password! \a\n");  // if yes? then it will ask user to put corrrect password
         }     
       }
     }
@@ -117,16 +134,16 @@ void main()
                     //Balance can only be withdrawn in Multiples of 100
 
       printf("\n Enter the Amount(Multiples of 100) to Withdraw(500 Minimum balance required in account): ");
-      scanf("%lu", &withdraw);
+      scanf("%lu", &withdraw);  //Reading ammount to be withdrawn
       
 
-      if (withdraw % 100 != 0)
+      if (withdraw % 100 != 0)  //if withdrawl ammount isn't a multiple of 100 
       {
 
-        printf("\n Please Enter the Amount in Multiples of 100");
+        printf("\n Please Enter the Amount in Multiples of 100"); //then it will ask user to enter a amount that is multiple of 100
 
       }
-      else if (withdraw > (amount - 500))
+      else if (withdraw > (amount - 500))   //if after withdrawn, the ammount in account is less then that of 500, the withdraw action will not be allowed
       {
 
         printf("\n Insufficent Balance, Minimum balance couldn't be less then ₹500 in account");
@@ -134,7 +151,7 @@ void main()
       
       else
       {
-        amount = amount - withdraw;
+        amount = amount - withdraw; //Withdrawn ammount is subtracted from total current ammount
         
         printf("\n\n Please Collect Cash");
         printf("\n Your Current Balance is Rs.%lu", amount);
@@ -149,11 +166,11 @@ void main()
     case 3:             //This case is used to Deposit the money in bank account
 
       printf("\nEnter the Amount to Deposit: Rs.\n");
-      scanf("%lu", &deposit);
+      scanf("%lu", &deposit); //Reading ammount to be diposted
 
-      amount = amount + deposit;
+      amount = amount + deposit;  //Deposit ammount is added to total current ammount
 
-      printf("Your Balance is Rs.%lu", amount);
+      printf("Your Balance is Rs.%lu", amount); //showing the latest balance
 
       fprintf(fptr2,"\nAmount Deposited: Rs.%lu \n", deposit);
       fprintf(fptr2,"Your Current Balance is Rs.%lu \n", amount);
@@ -225,6 +242,8 @@ void main()
                     printf("\n\nThis project of ATM machine Code Contains the Following functionality:\n");
                     printf("1. Check the balance\n2. Withdrawn cash\n3. Deposit Cash\n4. Currency Exchange to\n\t1. USD \n\t2. EUR \n\t3. JPY\n5. About NSTTPKS ATM\n\n\n\n");
                     printf("Keeping a record of Transaction History\n");
+                    printf("\n\nThis Mini Project uses some of the very basic concepts from C language,");
+                    printf("\n NOTE:this Program Doesn't show even a fraction of what C Language can do.\n");
                     break;
 
     case 6:
