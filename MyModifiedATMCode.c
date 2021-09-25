@@ -103,7 +103,7 @@ void main()
   printf("\nAccount Balance: %lu \n", amount);
 
   fclose(fptr3);
-
+  
   do
   {
     printf("\n                Hello, %s", name);
@@ -256,7 +256,7 @@ void main()
     }
     
     // to Repeat the Last Transcation Press Y, Or choose a option from Menu Below
-    printf("\n\nDo U Wish to Repeat Last Operation/Transcation, then Press 'Y', Or Press any key(Except Y/N) to return to Mainmenu: \nPress 'N' to Exit.\n");
+    printf("\n\nPress any key(Except 'N') to return to Mainmenu: \nPress 'N' to Exit.\n");
     fflush(stdin);
 
     scanf("%c", & transaction);

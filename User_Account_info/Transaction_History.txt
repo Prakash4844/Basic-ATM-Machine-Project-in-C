@@ -13,3 +13,17 @@ Your Current Balance is Rs.4900
 Amount Rs.200 Exchanged in €2 
 Your Current Account Balance is Rs.4700 
 =====================Session End=======================
+Sat Sep 25 10:57:11 2021
+ 
+Shown balance Amount: Rs.4700 
+
+Shown balance Amount: Rs.4700 
+
+Shown balance Amount: Rs.4700 
+=====================Session End=======================
+Sat Sep 25 10:59:41 2021
+ 
+Shown balance Amount: Rs.4700 
+
+Shown balance Amount: Rs.4700 
+=====================Session End=======================
